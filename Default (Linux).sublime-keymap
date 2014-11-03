@@ -1,0 +1,4 @@
+[
+	{ "keys": ["ctrl+super+right"], "command": "itunes_fastforward", "args": {} },
+	{ "keys": ["ctrl+super+left"], "command": "itunes_rewind", "args": {} },
+]
