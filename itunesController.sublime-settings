@@ -1,0 +1,4 @@
+{
+	// Setting time to back/forward the music
+	"default_backforward_time" : 15
+}

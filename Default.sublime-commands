@@ -1,0 +1,10 @@
+[
+	{
+		"caption": "iTunesController: Move to next",
+		"command": "itunes_move_to_next"
+	},
+	{
+		"caption": "iTunesController: Move to previous",
+		"command": "itunes_move_to_previous"
+	}
+]
