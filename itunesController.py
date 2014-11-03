@@ -37,18 +37,13 @@ class itunes_pause(sublime_plugin.TextCommand):
 class itunes_rewind(sublime_plugin.TextCommand):
 	def run(self, edit):
 		if platform == "win32":
-			iTunes.Rewind()
+			iTunes.PlayerPosition = iTunes.PlayerPosition - 15;
 		else:
-			iTunes.rewind()
+			iTunes.playerPosition = iTunes.playerPosition - 15;
 
 class itunes_fastforward(sublime_plugin.TextCommand):
 	def run(self, edit):
 		if platform == "win32":
-			iTunes.FastForward()
+			iTunes.PlayerPosition = iTunes.PlayerPosition + 15;
 		else:
-			iTunes.fastForward()
-
-class itunes_info(sublime_plugin.TextCommand):
-	def runt(self, edit):
-		ls = dir(iTunes)
-		self.view.insert(edit, 50, dir(iTunes))
+			iTunes.playerPosition = iTunes.playerPosition + 15;
