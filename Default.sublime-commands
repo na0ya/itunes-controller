@@ -16,7 +16,7 @@
 		"command": "itunes_rewind"
 	},
 	{
-		"caption": "iTunesController: Pause songs",
+		"caption": "iTunesController: Pause song",
 		"command": "itunes_pause"
 	}
 ]
