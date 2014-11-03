@@ -34,7 +34,7 @@ class itunes_pause(sublime_plugin.TextCommand):
 		else:
 			iTunes.playpause()
 
-class itunes_back(sublime_plugin.TextCommand):
+class itunes_rewind(sublime_plugin.TextCommand):
 	def run(self, edit):
 		if platform == "win32":
 			iTunes.Rewind()

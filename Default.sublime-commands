@@ -6,5 +6,17 @@
 	{
 		"caption": "iTunesController: Move to previous",
 		"command": "itunes_move_to_previous"
+	},
+	{
+		"caption": "iTunesController: Fast Forward 15 second",
+		"command": "itunes_fastforward"
+	},
+	{
+		"caption": "iTunesController: Rewind 15 second",
+		"command": "itunes_rewind"
+	},
+	{
+		"caption": "iTunesController: Pause songs",
+		"command": "itunes_pause"
 	}
 ]
