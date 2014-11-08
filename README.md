@@ -16,6 +16,8 @@ Put this package into your package folder. The "Packages" packages directory sho
 Usage
 -----------------
 
+First of all, you should start you iTunes application by your self. Then launch the sublimetext, or vice versa. Then you start the song whatever you want to transcript.
+
 You can get 2 hotkeys to controll iTunes.
 
  - Ctrl + Windows + right : FF with 15 secs
@@ -28,7 +30,6 @@ Also you will have following commands in cmd prompt. You can search with 'iTunes
  - Pause current song
  - Fast forward 15 seconds
  - Rewind 15 seconds
-
 
 The motivation behind this plugin
 -----------------

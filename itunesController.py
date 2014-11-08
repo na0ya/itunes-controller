@@ -5,45 +5,57 @@ import Pywin32.setup
 
 platform = sys.platform
 if platform == "win32":
-		import win32com.client
-		iTunes = win32com.client.gencache.EnsureDispatch("iTunes.Application")
+	import win32com.client
 else:
-		from Foundation import *
-		from ScriptingBridge import *
-		iTunes = SBApplication.applicationWithBundleIdentifier_("com.apple.iTunes")
+	from Foundation import *
+	from ScriptingBridge import *
 
-
-class itunes_move_to_next(sublime_plugin.TextCommand):
-	def run(self, edit):
+class InitializeApps(object):
+	def __init__(self):
 		if platform == "win32":
-			iTunes.NextTrack()
+			self.itunes = win32com.client.gencache.EnsureDispatch("iTunes.Application")
 		else:
-			iTunes.nextTrack()
+			self.itunes = SBApplication.applicationWithBundleIdentifier_("com.apple.iTunes")
 
-class itunes_move_to_previous(sublime_plugin.TextCommand):
-	def run(self, edit):
-		if platform == "win32":
-			iTunes.PreviousTrack()
-		else:
-			iTunes.previousTrack()
+	def get_connection(self):
+		return self.itunes
 
-class itunes_pause(sublime_plugin.TextCommand):
-	def run(self, edit):
+class itunesMoveNextCommand(sublime_plugin.TextCommand):
+	def run(view, edit):
+		app = InitializeApps().get_connection()
 		if platform == "win32":
-			iTunes.Playpause()
+			app.NextTrack()
 		else:
-			iTunes.playpause()
+			app.nextTrack()
 
-class itunes_rewind(sublime_plugin.TextCommand):
-	def run(self, edit):
+class itunesMovePreviousCommand(sublime_plugin.TextCommand):
+	def run(view, edit):
+		app = InitializeApps().get_connection()
 		if platform == "win32":
-			iTunes.PlayerPosition = iTunes.PlayerPosition - 15;
+			app.PreviousTrack()
 		else:
-			iTunes.playerPosition = iTunes.playerPosition - 15;
+			app.previousTrack()
 
-class itunes_fastforward(sublime_plugin.TextCommand):
-	def run(self, edit):
+class itunesPauseCommand(sublime_plugin.TextCommand):
+	def run(view, edit):
+		app = InitializeApps().get_connection()
 		if platform == "win32":
-			iTunes.PlayerPosition = iTunes.PlayerPosition + 15;
+			app.Playpause()
 		else:
-			iTunes.playerPosition = iTunes.playerPosition + 15;
+			app.playpause()
+
+class itunesRewindCommand(sublime_plugin.TextCommand):
+	def run(view, edit):
+		app = InitializeApps().get_connection()
+		if platform == "win32":
+			app.PlayerPosition = iTunes.PlayerPosition - 15;
+		else:
+			app.playerPosition = iTunes.playerPosition - 15;
+
+class itunesFastforwardCommand(sublime_plugin.TextCommand):
+	def run(view, edit):
+		app = InitializeApps().get_connection()
+		if platform == "win32":
+			app.PlayerPosition = iTunes.PlayerPosition + 15;
+		else:
+			app.playerPosition = iTunes.playerPosition + 15;

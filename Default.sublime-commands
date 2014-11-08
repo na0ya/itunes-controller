@@ -8,11 +8,11 @@
 		"command": "itunes_move_to_previous"
 	},
 	{
-		"caption": "iTunesController: Fast Forward 15 second",
+		"caption": "iTunesController: Fast Forward 15 seconds",
 		"command": "itunes_fastforward"
 	},
 	{
-		"caption": "iTunesController: Rewind 15 second",
+		"caption": "iTunesController: Rewind 15 seconds",
 		"command": "itunes_rewind"
 	},
 	{
