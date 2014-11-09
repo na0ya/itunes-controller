@@ -48,14 +48,14 @@ class itunesRewindCommand(sublime_plugin.TextCommand):
 	def run(view, edit):
 		app = InitializeApps().get_connection()
 		if platform == "win32":
-			app.PlayerPosition = iTunes.PlayerPosition - 15;
+			app.PlayerPosition = app.PlayerPosition - 15;
 		else:
-			app.playerPosition = iTunes.playerPosition - 15;
+			app.playerPosition = app.playerPosition - 15;
 
 class itunesFastforwardCommand(sublime_plugin.TextCommand):
 	def run(view, edit):
 		app = InitializeApps().get_connection()
 		if platform == "win32":
-			app.PlayerPosition = iTunes.PlayerPosition + 15;
+			app.PlayerPosition = app.PlayerPosition + 15;
 		else:
-			app.playerPosition = iTunes.playerPosition + 15;
+			app.playerPosition = app.playerPosition + 15;
